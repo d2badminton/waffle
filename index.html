@@ -13,13 +13,16 @@
             cursor: url('waffle-cursor.png'), auto; /* Custom waffle-shaped cursor */
         }
         .menu-header {
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             background: #000;
-            padding: 50px 0;
-        }
-        .menu-header img {
-            width: 200px;
-            height: auto;
+            color: #fdd835;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 5em;
+            text-align: center;
+            cursor: pointer;
         }
         .menu-container {
             display: none;
@@ -58,6 +61,9 @@
             width: 50%;
             font-size: 1.1em;
         }
+        iframe {
+            border: 0;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -69,7 +75,7 @@
 </head>
 <body>
     <div class="menu-header">
-        <img src="logo.png" alt="Dip'N Waffles Logo">
+        Dip'N Waffles
     </div>
 
     <div class="menu-container">
@@ -143,6 +149,19 @@
             <div class="menu-item">
                 <img src="placeholder.jpg" alt="Mexican Mayo">Mexican Mayo <span>₹15</span>
             </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Our Location</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3157.654495885487!2d77.59545571560667!3d12.934094590884037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU2JzAyLjciTiA3N8KwMzUnNTYuNCJF!5e0!3m2!1sen!2sin!4v1616412186848!5m2!1sen!2sin" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            <p><a href="https://maps.app.goo.gl/zZ9SjgvaXqC6z47v8" target="_blank" style="color: #fdd835;">View on Google Maps</a></p>
         </div>
     </div>
 </body>
