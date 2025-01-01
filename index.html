@@ -10,17 +10,19 @@
             margin: 0;
             background: #1a1a1a;
             color: #fff;
+            cursor: url('waffle-cursor.png'), auto; /* Custom waffle-shaped cursor */
         }
         .menu-header {
             text-align: center;
             background: #000;
-            padding: 20px 0;
+            padding: 50px 0;
         }
-        .menu-header h1 {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 3em;
-            color: #fdd835;
-            margin: 0;
+        .menu-header img {
+            width: 200px;
+            height: auto;
+        }
+        .menu-container {
+            display: none;
         }
         .menu-section {
             padding: 20px;
@@ -57,81 +59,90 @@
             font-size: 1.1em;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.addEventListener('click', () => {
+                document.querySelector('.menu-container').style.display = 'block';
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="menu-header">
-        <h1>Dip'N Waffles</h1>
+        <img src="logo.png" alt="Dip'N Waffles Logo">
     </div>
 
-    <div class="menu-section">
-        <h2>Waffles and Pancakes</h2>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Dark Choco Pops">Dark Choco Pops <span>₹99</span>
+    <div class="menu-container">
+        <div class="menu-section">
+            <h2>Waffles and Pancakes</h2>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Dark Choco Pops">Dark Choco Pops <span>₹99</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="White Choco Pops">White Choco Pops <span>₹99</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Milk Choco Pops">Milk Choco Pops <span>₹99</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Dark Choco Stick">Dark Choco Stick <span>₹109</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="White Choco Stick">White Choco Stick <span>₹109</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Milk Choco Stick">Milk Choco Stick <span>₹109</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Dark Choco Pancake">Dark Choco Pancake <span>₹119</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="White Choco Pancake">White Choco Pancake <span>₹119</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Milk Choco Pancake">Milk Choco Pancake <span>₹119</span>
+            </div>
         </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="White Choco Pops">White Choco Pops <span>₹99</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Milk Choco Pops">Milk Choco Pops <span>₹99</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Dark Choco Stick">Dark Choco Stick <span>₹109</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="White Choco Stick">White Choco Stick <span>₹109</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Milk Choco Stick">Milk Choco Stick <span>₹109</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Dark Choco Pancake">Dark Choco Pancake <span>₹119</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="White Choco Pancake">White Choco Pancake <span>₹119</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Milk Choco Pancake">Milk Choco Pancake <span>₹119</span>
-        </div>
-    </div>
 
-    <div class="menu-section">
-        <h2>Fried Mushroom Wings and Popcorn</h2>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="5 Pieces">5 Pieces <span>₹99</span>
+        <div class="menu-section">
+            <h2>Fried Mushroom Wings and Popcorn</h2>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="5 Pieces">5 Pieces <span>₹99</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="8 Pieces">8 Pieces <span>₹149</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Small Popcorn">Small <span>₹69</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Medium Popcorn">Medium <span>₹149</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Large Popcorn">Large <span>₹199</span>
+            </div>
         </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="8 Pieces">8 Pieces <span>₹149</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Small Popcorn">Small <span>₹69</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Medium Popcorn">Medium <span>₹149</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Large Popcorn">Large <span>₹199</span>
-        </div>
-    </div>
 
-    <div class="menu-section">
-        <h2>Beverages and Dips</h2>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Pepsi Regular">Pepsi Regular (350ml) <span>₹49</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Pepsi Large">Pepsi Large (500ml) <span>₹69</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Sprite Regular">Sprite Regular (350ml) <span>₹49</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Sprite Large">Sprite Large (500ml) <span>₹69</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Mayo">Mayo <span>₹15</span>
-        </div>
-        <div class="menu-item">
-            <img src="placeholder.jpg" alt="Mexican Mayo">Mexican Mayo <span>₹15</span>
+        <div class="menu-section">
+            <h2>Beverages and Dips</h2>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Pepsi Regular">Pepsi Regular (350ml) <span>₹49</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Pepsi Large">Pepsi Large (500ml) <span>₹69</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Sprite Regular">Sprite Regular (350ml) <span>₹49</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Sprite Large">Sprite Large (500ml) <span>₹69</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Mayo">Mayo <span>₹15</span>
+            </div>
+            <div class="menu-item">
+                <img src="placeholder.jpg" alt="Mexican Mayo">Mexican Mayo <span>₹15</span>
+            </div>
         </div>
     </div>
 </body>
