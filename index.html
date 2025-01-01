@@ -3,124 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dip'N Waffles - Menu</title>
+    <title>Dip'N Waffles Menu</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500&display=swap');
-
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
+            background: #1a1a1a;
+            color: #fff;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
+        .menu-header {
             text-align: center;
+            background: #000;
+            padding: 20px 0;
         }
-        header h1 {
-            font-family: 'Pacifico', cursive;
-            font-size: 2.5em;
+        .menu-header h1 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 3em;
+            color: #fdd835;
+            margin: 0;
         }
         .menu-section {
             padding: 20px;
-            text-align: center;
+            border-bottom: 2px solid #333;
         }
         .menu-section h2 {
-            color: #333;
-            font-weight: 500;
-            margin-bottom: 10px;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 2em;
+            color: #fdd835;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
-        .menu-section table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 80%;
-            font-size: 0.9em;
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: 1.2em;
         }
-        .menu-section table, .menu-section th, .menu-section td {
-            border: 1px solid #ddd;
+        .menu-item span {
+            color: #fdd835;
         }
-        .menu-section th, .menu-section td {
-            padding: 15px;
-            text-align: left;
+        .addon-list {
+            display: flex;
+            flex-wrap: wrap;
         }
-        .menu-section th {
-            background-color: #f2f2f2;
-        }
-        .location {
-            text-align: center;
-            padding: 20px;
-        }
-        .location iframe {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            width: 80%;
-            height: 300px;
-        }
-        .location a {
-            display: inline-block;
-            margin-top: 10px;
-            color: white;
-            background-color: #333;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500;
-        }
-        .location a:hover {
-            background-color: #555;
+        .addon-item {
+            width: 50%;
+            font-size: 1.1em;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="menu-header">
         <h1>Dip'N Waffles</h1>
-    </header>
-
-    <div class="menu-section">
-        <h2>Our Menu</h2>
-        <h3>Waffle Pops</h3>
-        <table>
-            <tr><th>Item</th><th>Price</th></tr>
-            <tr><td>Dark Choco Pops</td><td>₹99</td></tr>
-            <tr><td>White Choco Pops</td><td>₹99</td></tr>
-            <tr><td>Milk Choco Pops</td><td>₹99</td></tr>
-        </table>
-
-        <h3>Stick Waffles</h3>
-        <table>
-            <tr><th>Item</th><th>Price</th></tr>
-            <tr><td>Dark Choco Stick</td><td>₹109</td></tr>
-            <tr><td>White Choco Stick</td><td>₹109</td></tr>
-            <tr><td>Milk Choco Stick</td><td>₹109</td></tr>
-        </table>
-
-        <h3>Mini Pancakes</h3>
-        <table>
-            <tr><th>Item</th><th>Price</th></tr>
-            <tr><td>Dark Choco Pancake</td><td>₹119</td></tr>
-            <tr><td>White Choco Pancake</td><td>₹119</td></tr>
-            <tr><td>Milk Choco Pancake</td><td>₹119</td></tr>
-        </table>
-
-        <h3>Add-Ons</h3>
-        <table>
-            <tr><th>Item</th><th>Price</th></tr>
-            <tr><td>Nutella</td><td>₹40</td></tr>
-            <tr><td>Lotus Biscoff</td><td>₹40</td></tr>
-            <tr><td>Kitkat</td><td>₹25</td></tr>
-            <tr><td>Gems</td><td>₹20</td></tr>
-            <tr><td>Carmello</td><td>₹20</td></tr>
-            <tr><td>Oreo</td><td>₹20</td></tr>
-            <tr><td>Sprinkles</td><td>₹10</td></tr>
-        </table>
     </div>
 
-    <div class="location">
-        <h2>Visit Us</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.315156299314!2d73.85674347506925!3d18.520430371697267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0674a5ae8fb%3A0xe4d5ba239a6e3dcf!2sDip'N%20Waffles!5e0!3m2!1sen!2sin!4v1696398285314!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <a href="https://maps.app.goo.gl/zZ9SjgvaXqC6z47v8" target="_blank">Get Directions</a>
+    <div class="menu-section">
+        <h2>Waffle Pops</h2>
+        <div class="menu-item">Dark Choco Pops <span>₹99</span></div>
+        <div class="menu-item">White Choco Pops <span>₹99</span></div>
+        <div class="menu-item">Milk Choco Pops <span>₹99</span></div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Stick Waffles</h2>
+        <div class="menu-item">Dark Choco Stick <span>₹109</span></div>
+        <div class="menu-item">White Choco Stick <span>₹109</span></div>
+        <div class="menu-item">Milk Choco Stick <span>₹109</span></div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Mini Pancake</h2>
+        <div class="menu-item">Dark Choco Pancake <span>₹119</span></div>
+        <div class="menu-item">White Choco Pancake <span>₹119</span></div>
+        <div class="menu-item">Milk Choco Pancake <span>₹119</span></div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Add Ons</h2>
+        <div class="addon-list">
+            <div class="addon-item">Nutella <span>₹40</span></div>
+            <div class="addon-item">Lotus Biscoff <span>₹40</span></div>
+            <div class="addon-item">KitKat <span>₹25</span></div>
+            <div class="addon-item">Gems <span>₹20</span></div>
+            <div class="addon-item">Carmello <span>₹20</span></div>
+            <div class="addon-item">Oreo <span>₹20</span></div>
+            <div class="addon-item">Sprinkles <span>₹10</span></div>
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Fried Mushroom Wings</h2>
+        <div class="menu-item">5 Pieces <span>₹99</span></div>
+        <div class="menu-item">8 Pieces <span>₹149</span></div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Beverages</h2>
+        <div class="menu-item">Pepsi Regular (350ml) <span>₹49</span></div>
+        <div class="menu-item">Pepsi Large (500ml) <span>₹69</span></div>
+        <div class="menu-item">Sprite Regular (350ml) <span>₹49</span></div>
+        <div class="menu-item">Sprite Large (500ml) <span>₹69</span></div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Dips</h2>
+        <div class="menu-item">Mayo <span>₹15</span></div>
+        <div class="menu-item">Mexican Mayo <span>₹15</span></div>
+    </div>
+
+    <div class="menu-section">
+        <h2>Popcorn</h2>
+        <div class="menu-item">Small <span>₹69</span></div>
+        <div class="menu-item">Medium <span>₹149</span></div>
+        <div class="menu-item">Large <span>₹199</span></div>
     </div>
 </body>
 </html>
