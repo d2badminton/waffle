@@ -10,7 +10,6 @@
             margin: 0;
             background: #1a1a1a;
             color: #fff;
-            cursor: url('waffle-cursor.png'), auto; /* Custom waffle-shaped cursor */
         }
         .menu-header {
             display: flex;
@@ -23,9 +22,26 @@
             font-size: 5em;
             text-align: center;
             cursor: pointer;
+            position: relative;
+            transition: transform 0.8s ease-in-out;
         }
         .menu-container {
             display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            overflow-y: auto;
+            transition: transform 0.8s ease-in-out;
+        }
+        .menu-container.active {
+            display: block;
+            transform: translateX(-100%);
+        }
+        .menu-header.hidden {
+            transform: translateX(-100%);
         }
         .menu-section {
             padding: 20px;
@@ -53,22 +69,17 @@
         .menu-item span {
             color: #fdd835;
         }
-        .addon-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .addon-item {
-            width: 50%;
-            font-size: 1.1em;
-        }
         iframe {
             border: 0;
         }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            document.body.addEventListener('click', () => {
-                document.querySelector('.menu-container').style.display = 'block';
+            const header = document.querySelector('.menu-header');
+            const menu = document.querySelector('.menu-container');
+            header.addEventListener('click', () => {
+                header.classList.add('hidden');
+                menu.classList.add('active');
             });
         });
     </script>
