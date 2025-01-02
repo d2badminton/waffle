@@ -23,19 +23,23 @@
             font-size: 5em;
             text-align: center;
             cursor: pointer;
+            transition: all 0.5s ease-in-out;
         }
-        .menu-container {
+        .menu-header.sticky {
             position: fixed;
             top: 0;
-            left: 100%;
-            width: 100%;
-            height: 100%;
-            background: #1a1a1a;
-            overflow-y: auto;
-            transition: left 0.5s ease-in-out;
-        }
-        .menu-container.open {
             left: 0;
+            width: 100%;
+            height: 60px;
+            font-size: 1.5em;
+            text-align: left;
+            padding-left: 20px;
+            line-height: 60px;
+            z-index: 1000;
+        }
+        .menu-container {
+            display: none;
+            margin-top: 60px; /* Prevent overlapping when header becomes sticky */
         }
         .menu-section {
             padding: 20px;
@@ -63,25 +67,18 @@
         .menu-item span {
             color: #fdd835;
         }
-        .addon-list {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .addon-item {
-            width: 50%;
-            font-size: 1.1em;
-        }
         iframe {
             border: 0;
         }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const menuHeader = document.querySelector('.menu-header');
+            const header = document.querySelector('.menu-header');
             const menuContainer = document.querySelector('.menu-container');
-
-            menuHeader.addEventListener('click', () => {
-                menuContainer.classList.add('open');
+            
+            document.body.addEventListener('click', () => {
+                header.classList.add('sticky');
+                menuContainer.style.display = 'block';
             });
         });
     </script>
@@ -112,15 +109,6 @@
             <div class="menu-item">
                 <img src="placeholder.jpg" alt="Milk Choco Stick">Milk Choco Stick <span>₹109</span>
             </div>
-            <div class="menu-item">
-                <img src="placeholder.jpg" alt="Dark Choco Pancake">Dark Choco Pancake <span>₹119</span>
-            </div>
-            <div class="menu-item">
-                <img src="placeholder.jpg" alt="White Choco Pancake">White Choco Pancake <span>₹119</span>
-            </div>
-            <div class="menu-item">
-                <img src="placeholder.jpg" alt="Milk Choco Pancake">Milk Choco Pancake <span>₹119</span>
-            </div>
         </div>
 
         <div class="menu-section">
@@ -139,28 +127,6 @@
             </div>
             <div class="menu-item">
                 <img src="placeholder.jpg" alt="Large Popcorn">Large <span>₹199</span>
-            </div>
-        </div>
-
-        <div class="menu-section">
-            <h2>Beverages and Dips</h2>
-            <div class="menu-item">
-                <img src="placeholder.jpg" alt="Pepsi Regular">Pepsi Regular (350ml) <span>₹49</span>
-            </div>
-            <div class="menu-item">
-                <img src="placeholder.jpg" alt="Pepsi Large">Pepsi Large (500ml) <span>₹69</span>
-            </div>
-            <div class="menu-item">
-                <img src="placeholder.jpg" alt="Sprite Regular">Sprite Regular (350ml) <span>₹49</span>
-            </div>
-            <div class="menu-item">
-                <img src="placeholder.jpg" alt="Sprite Large">Sprite Large (500ml) <span>₹69</span>
-            </div>
-            <div class="menu-item">
-                <img src="placeholder.jpg" alt="Mayo">Mayo <span>₹15</span>
-            </div>
-            <div class="menu-item">
-                <img src="placeholder.jpg" alt="Mexican Mayo">Mexican Mayo <span>₹15</span>
             </div>
         </div>
 
