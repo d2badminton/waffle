@@ -10,7 +10,7 @@
             margin: 0;
             background: #1a1a1a;
             color: #fff;
-            cursor: url('waffle-cursor.png'), auto; /* Custom waffle-shaped cursor */
+            cursor: url('waffle-cursor.png'), auto;
         }
         .menu-header {
             display: flex;
@@ -39,7 +39,7 @@
         }
         .menu-container {
             display: none;
-            margin-top: 60px; /* Prevent overlapping when header becomes sticky */
+            margin-top: 60px;
         }
         .menu-section {
             padding: 20px;
@@ -58,27 +58,97 @@
             justify-content: space-between;
             padding: 5px 0;
             font-size: 1.2em;
+            cursor: pointer;
         }
         .menu-item img {
             width: 50px;
             height: 50px;
             margin-right: 10px;
+            transition: transform 0.3s ease;
         }
         .menu-item span {
             color: #fdd835;
         }
-        iframe {
-            border: 0;
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+        .modal-content {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .modal-content h3 {
+            font-size: 2em;
+            color: #fdd835;
+        }
+        .modal-content p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .modal-content span {
+            font-size: 1.5em;
+            color: #fff;
+        }
+        .modal-close {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background: #fdd835;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
         }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.querySelector('.menu-header');
             const menuContainer = document.querySelector('.menu-container');
-            
+            const modal = document.querySelector('.modal');
+            const modalContent = document.querySelector('.modal-content');
+            const closeModal = document.querySelector('.modal-close');
+
+            // Show menu on body click
             document.body.addEventListener('click', () => {
                 header.classList.add('sticky');
                 menuContainer.style.display = 'block';
+            });
+
+            // Show modal on menu-item click
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.querySelector('img').src;
+                    const name = item.textContent.trim();
+                    const price = item.querySelector('span').textContent;
+
+                    modalContent.innerHTML = `
+                        <img src="${imgSrc}" alt="${name}">
+                        <h3>${name}</h3>
+                        <p>Price: <span>${price}</span></p>
+                    `;
+                    modal.style.display = 'flex';
+                });
+            });
+
+            // Close modal
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
             });
         });
     </script>
@@ -97,55 +167,13 @@
             <div class="menu-item">
                 <img src="white-choco-pops.jpg" alt="White Choco Pops">White Choco Pops <span>₹99</span>
             </div>
-            <div class="menu-item">
-                <img src="milk-choco-pops.jpg" alt="Milk Choco Pops">Milk Choco Pops <span>₹99</span>
-            </div>
-            <div class="menu-item">
-                <img src="dark-choco-stick.jpg" alt="Dark Choco Stick">Dark Choco Stick <span>₹109</span>
-            </div>
-            <div class="menu-item">
-                <img src="white-choco-stick.jpg" alt="White Choco Stick">White Choco Stick <span>₹109</span>
-            </div>
-            <div class="menu-item">
-                <img src="milk-choco-stick.jpg" alt="Milk Choco Stick">Milk Choco Stick <span>₹109</span>
-            </div>
         </div>
+    </div>
 
-        <div class="menu-section">
-            <h2>Fried Mushroom Wings</h2>
-            <div class="menu-item">
-                <img src="5-pieces.jpg" alt="5 Pieces">5 Pieces <span>₹99</span>
-            </div>
-            <div class="menu-item">
-                <img src="8-pieces.jpg" alt="8 Pieces">8 Pieces <span>₹149</span>
-            </div>
-        </div>
-
-        <div class="menu-section">
-            <h2>Popcorn</h2>
-            <div class="menu-item">
-                <img src="small-popcorn.jpg" alt="Small Popcorn">Small <span>₹69</span>
-            </div>
-            <div class="menu-item">
-                <img src="medium-popcorn.jpg" alt="Medium Popcorn">Medium <span>₹149</span>
-            </div>
-            <div class="menu-item">
-                <img src="large-popcorn.jpg" alt="Large Popcorn">Large <span>₹199</span>
-            </div>
-        </div>
-
-        <div class="menu-section">
-            <h2>Our Location</h2>
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3157.654495885487!2d77.59545571560667!3d12.934094590884037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU2JzAyLjciTiA3N8KwMzUnNTYuNCJF!5e0!3m2!1sen!2sin!4v1616412186848!5m2!1sen!2sin" 
-                width="600" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-            </iframe>
-            <p><a href="https://maps.app.goo.gl/zZ9SjgvaXqC6z47v8" target="_blank" style="color: #fdd835;">View on Google Maps</a></p>
-        </div>
+    <!-- Modal -->
+    <div class="modal">
+        <div class="modal-content"></div>
+        <button class="modal-close">Close</button>
     </div>
 </body>
 </html>
