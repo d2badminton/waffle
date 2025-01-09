@@ -61,12 +61,37 @@
         iframe {
             border: 0;
         }
+        .menu-touch {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .menu-touch button {
+            background-color: #fdd835;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .menu-touch button:hover {
+            background-color: #e5c700;
+        }
     </style>
+    <script>
+        function showMenu() {
+            document.querySelector('.menu-container').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </head>
 <body>
     <div class="menu-header">
         <img src="veg-logo.png" alt="Veg Restaurant Logo">
         Dip'N Waffles
+    </div>
+
+    <div class="menu-touch">
+        <button onclick="showMenu()">Touch to View Menu</button>
     </div>
 
     <div class="menu-container">
