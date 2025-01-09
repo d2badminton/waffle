@@ -10,7 +10,6 @@
             margin: 0;
             background: #1a1a1a;
             color: #fff;
-            cursor: url('waffle-cursor.png'); /* Custom waffle-shaped cursor */
         }
         .menu-header {
             display: flex;
@@ -22,24 +21,16 @@
             font-family: 'Brush Script MT', cursive;
             font-size: 5em;
             text-align: center;
-            cursor: pointer;
             transition: all 0.5s ease-in-out;
         }
-        .menu-header.sticky {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            font-size: 1.5em;
-            text-align: left;
-            padding-left: 20px;
-            line-height: 60px;
-            z-index: 1000;
+        .menu-header img {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
         }
         .menu-container {
-            display: none;
-            margin-top: 60px; /* Prevent overlapping when header becomes sticky */
+            margin-top: 60px;
         }
         .menu-section {
             padding: 20px;
@@ -71,26 +62,16 @@
             border: 0;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.querySelector('.menu-header');
-            const menuContainer = document.querySelector('.menu-container');
-
-            document.body.addEventListener('click', () => {
-                header.classList.add('sticky');
-                menuContainer.style.display = 'block';
-            });
-        });
-    </script>
 </head>
 <body>
     <div class="menu-header">
+        <img src="veg-logo.png" alt="Veg Restaurant Logo">
         Dip'N Waffles
     </div>
 
     <div class="menu-container">
         <div class="menu-section">
-            <h2>Waffle Pops</h2>
+            <h2>Waffles and Pancakes</h2>
             <div class="menu-item">
                 <img src="dark-choco-pops.jpg" alt="Dark Choco Pops">Dark Choco Pops <span>₹99</span>
             </div>
@@ -100,10 +81,6 @@
             <div class="menu-item">
                 <img src="milk-choco-pops.jpg" alt="Milk Choco Pops">Milk Choco Pops <span>₹99</span>
             </div>
-        </div>
-
-        <div class="menu-section">
-            <h2>Stick Waffles</h2>
             <div class="menu-item">
                 <img src="dark-choco-stick.jpg" alt="Dark Choco Stick">Dark Choco Stick <span>₹109</span>
             </div>
@@ -116,48 +93,77 @@
         </div>
 
         <div class="menu-section">
-            <h2>Mini Pancakes</h2>
-            <div class="menu-item">Dark Choco Pancake <span>₹119</span></div>
-            <div class="menu-item">White Choco Pancake <span>₹119</span></div>
-            <div class="menu-item">Milk Choco Pancake <span>₹119</span></div>
-        </div>
-
-        <div class="menu-section">
             <h2>Fried Mushroom Wings</h2>
-            <div class="menu-item">5 Pieces <span>₹99</span></div>
-            <div class="menu-item">8 Pieces <span>₹149</span></div>
+            <div class="menu-item">
+                <img src="5-pieces.jpg" alt="5 Pieces">5 Pieces <span>₹99</span>
+            </div>
+            <div class="menu-item">
+                <img src="8-pieces.jpg" alt="8 Pieces">8 Pieces <span>₹149</span>
+            </div>
         </div>
 
         <div class="menu-section">
             <h2>Popcorn</h2>
-            <div class="menu-item">Small <span>₹69</span></div>
-            <div class="menu-item">Medium <span>₹149</span></div>
-            <div class="menu-item">Large <span>₹199</span></div>
+            <div class="menu-item">
+                <img src="small-popcorn.jpg" alt="Small Popcorn">Small <span>₹69</span>
+            </div>
+            <div class="menu-item">
+                <img src="medium-popcorn.jpg" alt="Medium Popcorn">Medium <span>₹149</span>
+            </div>
+            <div class="menu-item">
+                <img src="large-popcorn.jpg" alt="Large Popcorn">Large <span>₹199</span>
+            </div>
         </div>
 
         <div class="menu-section">
             <h2>Beverages</h2>
-            <div class="menu-item">Pepsi Regular (350ml) <span>₹49</span></div>
-            <div class="menu-item">Pepsi Large (500ml) <span>₹69</span></div>
-            <div class="menu-item">Sprite Regular (350ml) <span>₹49</span></div>
-            <div class="menu-item">Sprite Large (500ml) <span>₹69</span></div>
+            <div class="menu-item">
+                <img src="pepsi-regular.jpg" alt="Pepsi Regular">Pepsi Regular (350ml) <span>₹49</span>
+            </div>
+            <div class="menu-item">
+                <img src="pepsi-large.jpg" alt="Pepsi Large">Pepsi Large (500ml) <span>₹69</span>
+            </div>
+            <div class="menu-item">
+                <img src="sprite-regular.jpg" alt="Sprite Regular">Sprite Regular (350ml) <span>₹49</span>
+            </div>
+            <div class="menu-item">
+                <img src="sprite-large.jpg" alt="Sprite Large">Sprite Large (500ml) <span>₹69</span>
+            </div>
         </div>
 
         <div class="menu-section">
             <h2>Dips</h2>
-            <div class="menu-item">Mayo <span>₹15</span></div>
-            <div class="menu-item">Mexican Mayo <span>₹15</span></div>
+            <div class="menu-item">
+                <img src="mayo.jpg" alt="Mayo">Mayo <span>₹15</span>
+            </div>
+            <div class="menu-item">
+                <img src="mexican-mayo.jpg" alt="Mexican Mayo">Mexican Mayo <span>₹15</span>
+            </div>
         </div>
 
         <div class="menu-section">
-            <h2>Add-ons</h2>
-            <div class="menu-item">Nutella <span>₹40</span></div>
-            <div class="menu-item">Lotus Biscoff <span>₹40</span></div>
-            <div class="menu-item">Kitkat <span>₹25</span></div>
-            <div class="menu-item">Gems <span>₹20</span></div>
-            <div class="menu-item">Caramel <span>₹20</span></div>
-            <div class="menu-item">Oreo <span>₹20</span></div>
-            <div class="menu-item">Sprinkles <span>₹20</span></div>
+            <h2>Add Ons</h2>
+            <div class="menu-item">
+                <img src="nutella.jpg" alt="Nutella">Nutella <span>₹40</span>
+            </div>
+            <div class="menu-item">
+                <img src="lotus-biscoff.jpg" alt="Lotus Biscoff">Lotus Biscoff <span>₹40</span>
+            </div>
+            <div class="menu-item">
+                <img src="kitkat.jpg" alt="Kitkat">Kitkat <span>₹25</span>
+            </div>
+            <div class="menu-item">
+                <img src="gems.jpg" alt="Gems">Gems <span>₹20</span>
+            </div>
+            <div class="menu-item">
+                <img src="caramelo.jpg" alt="Caramelo">Caramelo <span>₹20</span>
+            </div>
+            <div class="menu-item">
+                <img src="oreo.jpg" alt="Oreo">Oreo <span>₹20</span>
+            </div>
+            <div class="menu-item">
+                <img src="sprinkles.jpg" alt="Sprinkles">Sprinkles <span>₹20</span>
+            </div>
         </div>
 
         <div class="menu-section">
